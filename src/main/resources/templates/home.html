@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Webpage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div th:insert="menu"></div>
+<div class="container mt-3">
+    <h2 class="text-center">Tabbed Interface</h2>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">Tab 1</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">Tab 2</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">Tab 3</button>
+        </li>
+    </ul>
+    <div class="tab-content mt-3" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+            <h1 class="text-center mb-4">Cégismertető – TermészetVédők Kft.</h1>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <p class="lead">
+                        A <strong>TermészetVédők Kft.</strong> egy magyar tulajdonú vállalkozás, amely kiemelten foglalkozik Magyarország védett állatfajainak megőrzésével és élőhelyeik védelmével.
+                    </p>
+                    <p>
+                        Cégünk célja, hogy hozzájáruljon a biológiai sokféleség fenntartásához és az ökológiai egyensúly megőrzéséhez hazánkban. Szakértő csapatunk több évtizedes tapasztalattal rendelkezik a természetvédelem, az állatmentés és az élőhely-rehabilitáció terén.
+                    </p>
+
+                    <h3 class="mt-4">Tevékenységek</h3>
+                    <p>
+                        Tevékenységeink közé tartozik a veszélyeztetett fajok megfigyelése, mentése és rehabilitációja, valamint oktatási programok szervezése a fenntarthatóság jegyében. Kiemelt figyelmet fordítunk olyan ikonikus fajokra, mint például a nagy kócsag, a kerecsensólyom vagy a rákosi vipera, melyek védelme nemcsak hazai, hanem nemzetközi szinten is kiemelkedő jelentőségű.
+                    </p>
+
+                    <h3 class="mt-4">Együttműködés</h3>
+                    <p>
+                        Cégünk együttműködik nemzeti parkokkal, állami szervekkel és civil szervezetekkel, hogy közösen dolgozzunk a természetvédelem érdekében.
+                    </p>
+                    <p class="mb-4">
+                        Hitvallásunk, hogy a természetvédelem nem csupán kötelesség, hanem közös felelősség is, amely generációkon átível. Célunk, hogy tevékenységünkkel hosszú távon biztosítsuk Magyarország gazdag természeti örökségének fennmaradását.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+            <h2>Tab 2 Content</h2>
+            <p>This is the content for Tab 2.</p>
+        </div>
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+            <h2>Tab 3 Content</h2>
+            <p>This is the content for Tab 3.</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
