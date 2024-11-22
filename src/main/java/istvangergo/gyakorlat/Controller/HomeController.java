@@ -40,7 +40,7 @@ public class HomeController {
             }
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole("ROLE_Vendeg");
+        user.setRole("ROLE_USER");
         userRepo.save(user);
         model.addAttribute("id", user.getId());
         return "signupSuccess";

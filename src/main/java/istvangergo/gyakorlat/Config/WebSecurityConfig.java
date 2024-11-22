@@ -32,13 +32,13 @@ public class WebSecurityConfig {
                         auth -> auth
                                 .requestMatchers("/", "/signup", "/process_signup").permitAll()
                                 .requestMatchers("/resources/**").permitAll()
-                                .requestMatchers("/home").authenticated()
+                                .requestMatchers("/home", "/animals").authenticated()
                                 .requestMatchers("/admin/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
                 .formLogin(
                         form -> form
-                                .defaultSuccessUrl("/home", true) // Force redirect to /home after login
+                                .defaultSuccessUrl("/home", true)
                                 .permitAll()
                 )
                 .logout(

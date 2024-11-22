@@ -18,7 +18,6 @@ import java.util.Collection;
 public class CostumUserDetailsService  implements UserDetailsService {
     @Autowired
     private UserRepository userRepo;
-    // Dependency injection
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         User user = userRepo.findByEmail(userName)

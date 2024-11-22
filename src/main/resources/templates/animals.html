@@ -1,0 +1,21 @@
+<h2>Animal List</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Value</th>
+        <th>Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="animal : ${animals}">
+        <td th:text="${animal.id}"></td>
+        <td th:text="${animal.name}"></td>
+        <td th:text="${animal.category}"></td>
+        <td th:text="${animal.value}"></td>
+        <td th:text="${animal.year}"></td>
+    </tr>
+    </tbody>
+</table>
