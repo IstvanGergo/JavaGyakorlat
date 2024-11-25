@@ -1,0 +1,18 @@
+<body>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Sender</th>
+    <th>Timestamp</th>
+    <th>Message</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="message : ${messages}">
+    <td th:text="${message.name}"></td>
+    <td th:text="${message.timestamp}"></td>
+    <td th:text="${message.message}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
