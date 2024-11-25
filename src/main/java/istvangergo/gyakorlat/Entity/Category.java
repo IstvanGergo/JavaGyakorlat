@@ -3,13 +3,15 @@ package istvangergo.gyakorlat.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int CategoryID;
     private String CategoryName;
-
+    @Override
+    public String toString() {
+        return CategoryName;
+    }
     public int getCategoryID() {
         return CategoryID;
     }
