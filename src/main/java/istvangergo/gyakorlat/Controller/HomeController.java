@@ -16,14 +16,6 @@ public class HomeController {
     public String home() {
         return "index";
     }
-    @GetMapping("/home")
-    public String user() {
-        return "home";
-    }
-    @GetMapping("/admin/home")
-    public String admin() {
-        return "admin";
-    }
     @GetMapping("/signup")
     public String greetingForm(Model model) {
         model.addAttribute("reg", new User());
@@ -44,6 +36,11 @@ public class HomeController {
         userRepo.save(user);
         model.addAttribute("id", user.getId());
         return "signupSuccess";
+    }
+    @GetMapping("/admin/home")
+    public String admin(Model model) {
+        model.addAttribute("users", userRepo.findAll());
+        return "admin";
     }
 }
 

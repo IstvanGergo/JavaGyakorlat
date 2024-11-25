@@ -30,15 +30,14 @@ public class WebSecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
                         auth -> auth
-                                .requestMatchers("/", "/signup", "/process_signup").permitAll()
-                                .requestMatchers("/resources/**").permitAll()
-                                .requestMatchers("/home", "/animals").authenticated()
+                                .requestMatchers("/", "/signup", "/process_signup","/connection").permitAll()
+                                .requestMatchers( "/animals").authenticated()
                                 .requestMatchers("/admin/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
                 .formLogin(
                         form -> form
-                                .defaultSuccessUrl("/home", true)
+                                .defaultSuccessUrl("/", true)
                                 .permitAll()
                 )
                 .logout(
