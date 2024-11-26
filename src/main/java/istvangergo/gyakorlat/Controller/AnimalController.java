@@ -7,20 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 public class AnimalController {
     @Autowired
     private AnimalRepository animalRepository;
     @GetMapping("/api/animals")
     public Iterable<Animal> getAnimals(Model model) {
-        Iterable<Animal> animals = animalRepository.findAll();
-        return animals;
+        return animalRepository.findAll();
     }
     @GetMapping("/api/animals/{id}")
     public Animal getAnimal(@PathVariable int id) {
         return animalRepository.findById(id).orElseThrow(() -> new AnimalNotFoundException(id));
+    }
+    @PostMapping("/api/animals")
+    Animal addAnimal(@RequestBody Animal animal) {
+        return animalRepository.save(animal);
     }
     @PutMapping("api/animals/{id}")
     public Animal updateAnimal(@PathVariable int id, @RequestBody Animal animal) {
@@ -36,7 +37,7 @@ public class AnimalController {
             return animalRepository.save(animal);
         });
     }
-    @DeleteMapping("/api/animals{id}")
+    @DeleteMapping("/api/animals/{id}")
     public void deleteAnimal(@PathVariable int id) {
         animalRepository.deleteById(id);
     }

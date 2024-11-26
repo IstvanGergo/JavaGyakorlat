@@ -12,10 +12,12 @@
         <a th:href="@{/admin/home}">Admin</a>
       </span>
       <span sec:authorize="isAnonymous()">
-        <a th:href="@{/signup}">Regisztrál</a>
+        <a th:href="@{/signup}">Regisztráció</a>
       </span>
       <span sec:authorize="isAuthenticated()">
            <a> Bejelentkezve mint: <span sec:authentication="principal.username">User</span></a>
       </span>
   </div>
 </div>
+
+

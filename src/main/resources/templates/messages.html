@@ -1,18 +1,27 @@
-<body>
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Sender</th>
-    <th>Timestamp</th>
-    <th>Message</th>
+    <th>Küldő</th>
+    <th>Idő</th>
+    <th>Üzenet</th>
   </tr>
   </thead>
-  <tbody>
-  <tr th:each="message : ${messages}">
-    <td th:text="${message.name}"></td>
-    <td th:text="${message.timestamp}"></td>
-    <td th:text="${message.message}"></td>
-  </tr>
+  <tbody id="message-table-body">
   </tbody>
 </table>
-</body>
+<script>
+  fetch('/getMessages')
+          .then(response => response.json())
+          .then(data => {
+            const tableBody = document.getElementById('message-table-body');
+            data.forEach(message => {
+              const row = `<tr>
+                                <td>${message.name}</td>
+                                <td>${message.timestamp}</td>
+                                <td>${message.message}</td>
+                             </tr>`;
+              tableBody.insertAdjacentHTML('beforeend', row);
+            });
+          })
+          .catch(error => console.error('Error fetching message data:', error));
+</script>
