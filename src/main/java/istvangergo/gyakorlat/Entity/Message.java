@@ -3,8 +3,6 @@ package istvangergo.gyakorlat.Entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 @Entity
 @Table(name="message")
 public class Message {
@@ -12,8 +10,6 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    @NotNull
-    @Min(5)
     private String message;
     private LocalDateTime timestamp;
 

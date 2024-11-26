@@ -27,7 +27,10 @@ public class MessageController {
         adminMessage.setName(name);
         adminMessage.setMessage(message);
         adminMessage.setTimestamp(LocalDateTime.now());
+
         messageRepository.save(adminMessage);
+
+        model.addAttribute("successMessage", "Your message has been sent successfully!");
         return "index";
     }
 }

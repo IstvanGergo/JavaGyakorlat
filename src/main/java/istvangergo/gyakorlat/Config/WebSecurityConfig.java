@@ -30,7 +30,8 @@ public class WebSecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
                         auth -> auth
-                                .requestMatchers("/", "/signup","/api/**", "/process_signup","/connection", "/sendMessage","/getMessages").permitAll()
+                                .requestMatchers("/", "/signup","/api/**",
+                                        "/process_signup", "/sendMessage","/getMessages").permitAll()
                                 .requestMatchers( "/animals").authenticated()
                                 .requestMatchers("/admin/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()

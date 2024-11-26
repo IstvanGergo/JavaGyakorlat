@@ -13,6 +13,7 @@
   fetch('/getMessages')
           .then(response => response.json())
           .then(data => {
+            data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
             const tableBody = document.getElementById('message-table-body');
             data.forEach(message => {
               const row = `<tr>
@@ -25,3 +26,4 @@
           })
           .catch(error => console.error('Error fetching message data:', error));
 </script>
+

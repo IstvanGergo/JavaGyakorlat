@@ -44,7 +44,6 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
